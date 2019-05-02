@@ -8,10 +8,12 @@ Rails.application.routes.draw do
   get :app, to: 'static_pages#app'
 
   namespace :api do
-    get :new_order
     get :categories
     get :products_category
     get :products
+
+    get :new_order
+    get :cancel_order
     get :order
   end
 end
