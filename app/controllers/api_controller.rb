@@ -39,6 +39,17 @@ class ApiController < ApplicationController
     end
   end
 
+  # Destroy Order product http://localhost:3000/api/destroy_order_product?order_product[order_id]=1&order_product[product_id]=1
+  def destroy_order_product
+    @order_product = OrderProduct.find_by order_product_params
+
+    if @order_product.destroy
+      render json: { result: true, object: @order_product }
+    else
+      render json: { result: false, object: @order_product.errors }
+    end
+  end
+
   # Consult order
   def order
     order = {}

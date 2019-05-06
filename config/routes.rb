@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get :products
 
     get :new_order_product
+    get :destroy_order_product
 
     get :new_order
     get :cancel_order
