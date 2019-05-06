@@ -28,7 +28,7 @@ class ApiController < ApplicationController
     render json: { result: true }
   end
 
-  # New Order product
+  # New Order product http://localhost:3000/api/new_order_product?order_product[order_id]=1&order_product[product_id]=1
   def new_order_product
     @order_product = OrderProduct.new order_product_params
 

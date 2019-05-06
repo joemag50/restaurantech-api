@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     get :products_category
     get :products
 
+    get :new_order_product
+
     get :new_order
     get :cancel_order
     get :order
