@@ -60,6 +60,7 @@ class ApiController < ApplicationController
     @order = Order.find(params[:id])
     order[:order] = @order
     order[:order_products] = @order.order_products
+    order[:total] = @order.total.to_s
     render json: { result: true, object: order }
   end
 

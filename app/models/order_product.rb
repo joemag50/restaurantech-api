@@ -1,5 +1,5 @@
 class OrderProduct < ApplicationRecord
-  has_one :product
+  belongs_to :product
 
   before_save :save_name
 
