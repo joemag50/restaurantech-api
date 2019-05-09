@@ -1,2 +1,19 @@
-<h1>StaticPages#app</h1>
-<p>Find me in app/views/static_pages/app.html.erb</p>
+<%- if @order_products.empty? %>
+  <div class="card">
+    <div class="card-body">
+      <h5>No hay ordenes pendientes</h5>
+    </div>
+  </div>
+<%- else%>
+  <%- @order_products.each do |op| %>
+    <div class="card">
+      <div class="card-body">
+        <h5><%= op.id %></h5>
+        <h5>Cliente: <%= op.order.client_name %></h5>
+        <h5>Mesa: <%= op.order.table %></h5>
+        <h5>Producto: <%= op.product.name %></h5>
+        <%= link_to 'Terminado', order_product_change_state_path(op), class: 'btn btn-success' %>
+      </div>
+    </div>
+  <%- end %>
+<%- end %>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :categories
-  resources :order_products
+  resources :order_products do
+    get :change_state
+  end
   resources :orders
   resources :products
   devise_for :users

@@ -61,6 +61,13 @@ class OrderProductsController < ApplicationController
     end
   end
 
+  def change_state
+    @order_product = OrderProduct.find(params[:order_product_id])
+    @order_product.state = 1
+    @order_product.save
+    redirect_to app_path
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_order_product
